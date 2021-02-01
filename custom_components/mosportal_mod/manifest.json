@@ -1,0 +1,12 @@
+{
+  "domain": "mosportal_mod",
+  "name": "mosportal_mod HA integration",
+  "documentation": "https://github.com/kkuryshev/ha_mosportal.git",
+  "dependencies": [],
+  "codeowners": [
+    "@kkuryshev"
+  ],
+  "requirements": [
+      "requests"
+  ]
+}

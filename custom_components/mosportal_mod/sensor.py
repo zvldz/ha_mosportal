@@ -6,8 +6,8 @@ from homeassistant.helpers.entity import Entity
 
 _LOGGER = logging.getLogger(__name__)
 
-DOMAIN = 'mosportal'
-DEFAULT_NAME = 'Счетчик воды  (Моспортал)'
+DOMAIN = 'mosportal_mod'
+DEFAULT_NAME = 'Счетчик воды  (Моспортал mod)'
 CONF_METER_ID = 'meter_id'
 
 
@@ -64,7 +64,7 @@ class WaterSensor(Entity):
     @property
     def unique_id(self) -> str:
         """Return a unique identifier for this entity."""
-        return f"mosportal_{self.name}"
+        return f"mosportal_mod_{self.name}"
 
     @property
     def device_state_attributes(self):

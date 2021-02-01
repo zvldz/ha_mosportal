@@ -1,6 +1,10 @@
 import logging
 import json
-from mosportal import Epd, Water, Session, WaterException, EpdNotExist
+#from mosportal_mod import Epd, Water, Session, WaterException, EpdNotExist
+from .lib.epd import Epd, EpdNotExist
+from .lib.water import Water, WaterException
+from .lib.session import Session
+from .lib.version import VERSION
 from .const import DOMAIN, CONF_PAYCODE, CONF_FLAT, FLAT_LIST
 import async_timeout
 from datetime import datetime
@@ -12,7 +16,7 @@ import homeassistant.helpers.config_validation as cv
 from homeassistant.helpers.discovery import async_load_platform
 import base64
 from os.path import join, dirname, abspath
-import pkg_resources
+#import pkg_resources
 
 
 _LOGGER = logging.getLogger(__name__)
@@ -40,8 +44,8 @@ CONFIG_SCHEMA = vol.Schema(
 
 async def async_setup(hass: HomeAssistant, base_config: dict):
     _LOGGER.info(
-        'Используется версия модуля mosportal: %s' %
-        pkg_resources.get_distribution("mosportal").version)
+        'Используется версия модуля mosportal_mod: %s' %
+        VERSION)
     config = base_config[DOMAIN]
     _LOGGER.debug("настройка компонента моспортал")
 
@@ -73,7 +77,7 @@ async def async_setup(hass: HomeAssistant, base_config: dict):
             )
         )
     else:
-       _LOGGER.warning("информация о счетчиках воды на портале Москвы не найдена") 
+       _LOGGER.warning("информация о счетчиках воды на портале Москвы не найдена")
 
     async def trigger_get_epd_service(call):
         try:

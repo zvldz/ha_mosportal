@@ -1,5 +1,5 @@
-DOMAIN = "mosportal"
+DOMAIN = "mosportal_mod"
 CONF_PAYCODE = "paycode"
 CONF_FLAT = "flat"
-DEFAULT_NAME = "mosportal"
+DEFAULT_NAME = "mosportal_mod"
 FLAT_LIST = "flats"
